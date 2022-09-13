@@ -32,7 +32,7 @@ function Gacha() {
     }
 
     function onOpenAll(type) {
-        if (!window.confirm('Confirm Open Gacha?')) return
+        // if (!window.confirm('Confirm Open Gacha?')) return
         if (count === 0) {
             alert('No Gacha Count!')
             return

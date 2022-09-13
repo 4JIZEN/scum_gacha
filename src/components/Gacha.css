@@ -114,10 +114,6 @@ button:hover, .span-btn:hover  {
     display: none;
 }
 
-.blur {
-    filter: blur(4px);
-}
-
 .span-btn {
     font-weight: 400;
     padding: 4px;
