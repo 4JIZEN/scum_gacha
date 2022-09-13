@@ -52,6 +52,8 @@
 
 .Command-Content {
    margin-top: 14px;
+   max-height: 800px;
+   overflow-y:scroll;
 }
 
 .Command-Lists {

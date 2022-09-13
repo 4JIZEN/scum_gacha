@@ -46,8 +46,8 @@
 
 .Gacha-Item {
     margin: 2px;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.3);
     position: relative;
