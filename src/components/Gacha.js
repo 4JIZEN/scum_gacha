@@ -1,7 +1,7 @@
 import './Gacha.css';
 import { useEffect, useState } from 'react';
 import Command from './Command'
-// import Opening from './Opening'
+import Opening from './Opening'
 import items from '../utils/items'
 import getRandItems from '../utils/rand'
 
@@ -112,7 +112,7 @@ function Gacha() {
             <div className='Gacha-Received hide'>{elReceived}</div>
 
             <Command items={inventory} />
-            {/* <Opening /> */}
+            <Opening />
         </div>
     );
 }

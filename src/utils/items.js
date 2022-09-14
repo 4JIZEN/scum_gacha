@@ -40,8 +40,6 @@ const items = [
     { name: 'UMP 45', amount: 1 ,rate: 'uncommon', command:'#spawnitem BPC_Weapon_UMP45', img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/e4/UMP_45.png" },
     { name: 'VHS2', amount: 1 ,rate: 'uncommon', command:'#spawnitem BP_Weapon_VHS2_Rail', img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/92/VHS2.png" },
     { name: 'VHS BG', amount: 1 ,rate: 'rare', command:'#spawnitem BP_Weapon_VHS_BG', img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/2/26/VHS-BG.png" },
-    { name: 'Credit', amount: 10000 ,rate: 'legendary', command:'', img: "https://i.imgur.com/gOaltyC.png" },
-    
 ]
 
 export default items
