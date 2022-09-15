@@ -1,5 +1,4 @@
 import './Command.css'
-// import { useState } from 'react';
 
 function Command(props) {
 
@@ -10,14 +9,21 @@ function Command(props) {
         navigator.clipboard.writeText(e.target.parentNode.firstChild.innerText);
     }
 
-    const elCommand = props.items.map((item, key) =>{
-        return (
-            <div key={key} className='Command-Lists'>
-                <div className='command-text'>{item.command + ' ' + item.amount}</div>
-                <span className='span-btn' onClick={(e)=> { onClickCopy(e) }}>copy</span>
-            </div>
-        )
-    })
+    let elCommand = [];
+    
+    props.items.forEach((element, mkey) => {
+        let newCmd = [];
+        newCmd =  element.command.map((item, key) =>{
+                return (
+                <div key={mkey.toString() + key.toString()} className='Command-Lists'>
+                    <div className='command-text'>{item + ' ' + element.amount}</div>
+                    <span className='span-btn' onClick={(e)=> { onClickCopy(e) }}>copy</span>
+                </div>
+            )
+        })
+
+        elCommand = [...elCommand, newCmd]
+    });
 
     function onCloseCmd() {
         document.querySelector('.Command-Container').classList.add('hide');

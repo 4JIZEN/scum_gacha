@@ -32,13 +32,29 @@ function Gacha() {
         document.querySelector('.Command-Container').classList.remove('hide');
     }
 
+    function disableBtn() {
+        const el = document.querySelectorAll('.Btn-Open-Gacha');
+        el.forEach(item => {
+            item.disabled = true;
+        })
+    }
+
+    function enableBtn() {
+        const el = document.querySelectorAll('.Btn-Open-Gacha');
+        el.forEach(item => {
+            item.disabled = false;
+        })
+    }
+
     function onOpenAll(type) {
         // if (!window.confirm('Confirm Open Gacha?')) return
+        
         if (count === 0) {
             alert('No Gacha Count!')
             return
         }
 
+        disableBtn()
         let found = false
         let tinv = inventory
         let openCount = count
@@ -84,8 +100,7 @@ function Gacha() {
             }
        }
 
-       inventoryHide(true)
-        let rateColor = 'common'
+        inventoryHide(true)
         setElReceived(inventory.map((item, key) => {
             return (
                 <div key={key} className={'Gacha-Item ' + item.rate} style={{backgroundImage: `url(${item.img})`}}>
@@ -97,27 +112,25 @@ function Gacha() {
         if (lockpick) {
             const vid = document.querySelector('.Video-container');
             const elOpen = document.querySelector('.Opening-Container');
-            // elOpen.classList.add('fade-in')
             vid.currentTime = 0;
             vid.volume = 0.2;
             vid.muted = false;
             vid.play();
-            
-            // setTimeout(()=> {
-                elOpen.style.opacity = 1;
-                elOpen.style.zIndex = 99;
+            elOpen.style.opacity = 1;
+            elOpen.style.zIndex = 99;
+            setTimeout(() => {
+                elOpen.classList.add('fade-out')
                 setTimeout(() => {
-                    // elOpen.classList.remove('fade-in')
-                    elOpen.classList.add('fade-out')
+                    elOpen.style.opacity = 0;
+                    elOpen.style.zIndex = -99;
+                    elOpen.classList.remove('fade-out')
+                    setLockpick(false)
+                    inventoryHide(false)
                     setTimeout(() => {
-                        elOpen.style.opacity = 0;
-                        elOpen.style.zIndex = -99;
-                        elOpen.classList.remove('fade-out')
-                        setLockpick(false)
-                        inventoryHide(false)
+                        enableBtn()
                     }, 500)
-                }, 4000);
-            // }, 500)
+                }, 500)
+            }, 4000);
         }
     }, [inventory])
 
