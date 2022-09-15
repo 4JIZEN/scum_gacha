@@ -1,11 +1,17 @@
 import './Gacha.css';
 import { useEffect, useState } from 'react';
 import Command from './Command'
-// import Opening from './Opening'
+import Opening from './Opening'
 import items from '../utils/items'
 import getRandItems from '../utils/rand'
 
 function Gacha() {
+
+    // const [steamId, setSteamId] = useState('');
+    const [count, setCount] = useState(0);
+    const [inventory, setInventory] = useState([]);
+    const [elReceived, setElReceived] = useState([]);
+    const [lockpick, setLockpick] = useState(false);
 
     const elGachaItems = items.map((item, key) => {
         return (
@@ -14,12 +20,6 @@ function Gacha() {
             </div>
         )
     })
-
-    // const [steamId, setSteamId] = useState('');
-    const [count, setCount] = useState(0);
-
-    const [inventory, setInventory] = useState([]);
-    const [elReceived, setElReceived] = useState([]);
 
     function onReset() {
         if (!window.confirm('Confirm to reset data?')) return
@@ -38,7 +38,7 @@ function Gacha() {
             alert('No Gacha Count!')
             return
         }
-        
+
         let found = false
         let tinv = inventory
         let openCount = count
@@ -67,9 +67,25 @@ function Gacha() {
         } 
        
         setInventory(tinv)
+        setLockpick(true)
     }
 
     useEffect(()=> {
+        function inventoryHide(status) {
+            const elGcRec = document.querySelector('.Gacha-Received');
+            const elBtn = document.querySelector('.span-btn');
+
+            if (status) {
+                elGcRec.classList.add('hide');
+                elBtn.classList.add('hide');
+            } else {
+                elGcRec.classList.remove('hide');
+                elBtn.classList.remove('hide');
+            }
+       }
+
+       inventoryHide(true)
+        let rateColor = 'common'
         setElReceived(inventory.map((item, key) => {
             return (
                 <div key={key} className={'Gacha-Item ' + item.rate} style={{backgroundImage: `url(${item.img})`}}>
@@ -78,12 +94,30 @@ function Gacha() {
             )
         }))
 
-        if (inventory.length === 0) {
-            document.querySelector('.Gacha-Received').classList.add('hide');
-            document.querySelector('.span-btn').classList.add('hide');
-        } else {
-            document.querySelector('.Gacha-Received').classList.remove('hide');
-            document.querySelector('.span-btn').classList.remove('hide');
+        if (lockpick) {
+            const vid = document.querySelector('.Video-container');
+            const elOpen = document.querySelector('.Opening-Container');
+            // elOpen.classList.add('fade-in')
+            vid.currentTime = 0;
+            vid.volume = 0.2;
+            vid.muted = false;
+            vid.play();
+            
+            // setTimeout(()=> {
+                elOpen.style.opacity = 1;
+                elOpen.style.zIndex = 99;
+                setTimeout(() => {
+                    // elOpen.classList.remove('fade-in')
+                    elOpen.classList.add('fade-out')
+                    setTimeout(() => {
+                        elOpen.style.opacity = 0;
+                        elOpen.style.zIndex = -99;
+                        elOpen.classList.remove('fade-out')
+                        setLockpick(false)
+                        inventoryHide(false)
+                    }, 500)
+                }, 4000);
+            // }, 500)
         }
     }, [inventory])
 
@@ -110,9 +144,8 @@ function Gacha() {
 
             <p className="Head-Sub">Received <span className='Btn-Command span-btn hide' onClick={()=> onOpenCmd()}>command</span></p>
             <div className='Gacha-Received hide'>{elReceived}</div>
-
             <Command items={inventory} />
-            {/* <Opening /> */}
+            <Opening show={lockpick}/>
         </div>
     );
 }

@@ -4,11 +4,17 @@ const weightRate = {
     // rare: 15,
     // epic: 7,
     // legendary: 1
-    common: 45,
-    uncommon: 25,
-    rare: 15,
-    epic: 10,
-    legendary: 5
+
+    // common: 45,
+    // uncommon: 25,
+    // rare: 15,
+    // epic: 10,
+    // legendary: 5
+
+    common: 40,
+    rare: 25,
+    epic: 20,
+    legendary: 15
 }
 
 function getRandItems (items) {
