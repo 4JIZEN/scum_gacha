@@ -1,8 +1,8 @@
-import logo from '../assets/dion-scum.png';
+import logo from '../assets/logo.png';
 
 function Header() {
     return (
-        <img className='App-Logo' style={{width: '12rem'}} src={logo} alt='Dion Scum' />
+        <img className='App-Logo' style={{width: '12rem'}} src={logo} alt='NEXT TH' />
     )
 }
 

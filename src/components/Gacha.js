@@ -6,8 +6,7 @@ import items from '../utils/items'
 import getRandItems from '../utils/rand'
 
 function Gacha() {
-
-    // const [steamId, setSteamId] = useState('');
+    const [steamId, setSteamId] = useState('');
     const [count, setCount] = useState(0);
     const [inventory, setInventory] = useState([]);
     const [elReceived, setElReceived] = useState([]);
@@ -16,13 +15,14 @@ function Gacha() {
     const elGachaItems = items.map((item, key) => {
         return (
             <div key={key} className={'Gacha-Item ' + item.rate} style={{backgroundImage: `url(${item.img})`}}>
-                <div className="Gacha-Item-Amount">x<span>{item.amount}</span></div>
+                {item.amount == 0 ? <div className="Gacha-Item-Amount">Set</div> : <div className="Gacha-Item-Amount">x<span>{item.amount}</span></div>}
             </div>
         )
     })
 
     function onReset() {
         if (!window.confirm('Confirm to reset data?')) return
+        setSteamId('')
         setCount(0)
         setInventory([])
         setElReceived([])
@@ -138,6 +138,10 @@ function Gacha() {
         document.querySelector('.Gacha-Count-Input').value = count;
     }, [count])
 
+    useEffect(()=> {
+        document.querySelector('.Gacha-SteamId-Input').value = steamId;
+    }, [steamId])
+
     return (
         <div className="Gacha">
             <p className="Head-Sub" >Package</p>
@@ -145,7 +149,7 @@ function Gacha() {
             
             <div className='Gacha-Control'>
                 <form id="FormGachaInfo" className='Gacha-Control-Info'>
-                    {/* <input type="text" onChange={ e => setSteamId(e.target.value) } placeholder="Steam ID" required/> */}
+                    <input className='Gacha-SteamId-Input' type="text" onChange={ e => setSteamId(e.target.value) } placeholder="Steam ID"/>
                     <input className='Gacha-Count-Input' type="number" min={0} max={1000} value={count} onChange={ e => setCount(e.target.value) } placeholder="Gacha Count" required/>
                 </form>
 
@@ -157,7 +161,7 @@ function Gacha() {
 
             <p className="Head-Sub">Received <span className='Btn-Command span-btn hide' onClick={()=> onOpenCmd()}>command</span></p>
             <div className='Gacha-Received hide'>{elReceived}</div>
-            <Command items={inventory} />
+            <Command items={inventory} steamId={steamId} />
             <Opening show={lockpick}/>
         </div>
     );

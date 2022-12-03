@@ -1,6 +1,6 @@
 import './Command.css'
 
-function Command(props) {
+function Command({items, steamId}) {
 
     function onClickCopy(e) {
         if (!e.target.classList.contains('slide')) {
@@ -10,13 +10,21 @@ function Command(props) {
     }
 
     let elCommand = [];
-    
-    props.items.forEach((element, mkey) => {
+
+   
+    items.forEach((element, mkey) => {
         let newCmd = [];
-        newCmd =  element.command.map((item, key) =>{
+        const cmdsplit = element.command.split(/\r?\n/);
+
+        newCmd = cmdsplit.map((item, key) =>{
+                const location = (steamId != "") ?  ` Location ${steamId}` : '';
                 return (
                 <div key={mkey.toString() + key.toString()} className='Command-Lists'>
-                    <div className='command-text'>{item + ' ' + element.amount}</div>
+                    {
+                        (element.amount == 0) 
+                        ? <div className='command-text'>{item} {location}</div>
+                        : <div className='command-text'>{item + ' ' + element.amount + location}</div>
+                    }
                     <span className='span-btn' onClick={(e)=> { onClickCopy(e) }}>copy</span>
                 </div>
             )

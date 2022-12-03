@@ -13,7 +13,7 @@
 }
 
 .Command-Body {
-    width: 600px;
+    min-width: 600px;
     min-height: 400px;
     background-color: #282c34;
     border-radius: 5px;
