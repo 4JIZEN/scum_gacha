@@ -9,6 +9,10 @@ function App() {
     <div className="App">
       <Header />
       <Gacha />
+
+      <div class="footer">
+        <p>Create by <a href='https://github.com/imntps' target="_blank">4JIZEN</a></p>
+      </div>
     </div>
   );
 }
