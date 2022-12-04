@@ -11,7 +11,7 @@ function App() {
       <Gacha />
 
       <div className="footer">
-        <p>Create by <a href='https://github.com/imntps' target="_blank">4JIZEN</a></p>
+        <p>Create by <a href='https://github.com/4JIZEN' target="_blank">4JIZEN</a></p>
       </div>
     </div>
   );
