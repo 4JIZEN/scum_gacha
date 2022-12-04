@@ -15,7 +15,7 @@ function Gacha() {
     const elGachaItems = items.map((item, key) => {
         return (
             <div key={key} className={'Gacha-Item ' + item.rate} style={{backgroundImage: `url(${item.img})`}}>
-                {item.amount == 0 ? <div className="Gacha-Item-Amount">Set</div> : <div className="Gacha-Item-Amount">x<span>{item.amount}</span></div>}
+                <div className="Gacha-Item-Amount">x<span>{item.amount}</span></div>
             </div>
         )
     })

@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Gacha />
 
-      <div class="footer">
+      <div className="footer">
         <p>Create by <a href='https://github.com/imntps' target="_blank">4JIZEN</a></p>
       </div>
     </div>

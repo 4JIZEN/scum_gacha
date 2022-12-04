@@ -15,13 +15,14 @@ function Command({items, steamId}) {
     items.forEach((element, mkey) => {
         let newCmd = [];
         const cmdsplit = element.command.split(/\r?\n/);
+        const multiCmd = cmdsplit.length > 1;
 
         newCmd = cmdsplit.map((item, key) =>{
                 const location = (steamId != "") ?  ` Location ${steamId}` : '';
                 return (
                 <div key={mkey.toString() + key.toString()} className='Command-Lists'>
                     {
-                        (element.amount == 0) 
+                        (multiCmd)
                         ? <div className='command-text'>{item} {location}</div>
                         : <div className='command-text'>{item + ' ' + element.amount + location}</div>
                     }
