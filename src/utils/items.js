@@ -142,7 +142,7 @@ const items = [
         amount: 2,
         rate: "common",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/0a/Armor_Tactical_Vest.png",
-        command: "#SpawnItem Armor_Tactical_Vest_03",
+        command: "#SpawnItem BP_Armor_Tactical_Vest_01_01",
     },
     {
         name: "Beef Stew MRE",
@@ -227,6 +227,41 @@ const items = [
         rate: "common",
         img: "https://scum.online/wp-content/uploads/scumimages/Cal_9mm_Ammobox.png",
         command: "#SpawnItem Cal_9mm_Ammobox",
+    },
+    {
+        name: "Hazmat Suit",
+        amount: 1,
+        rate: "legendary",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/de/Modern_Hazmat_Suit.png",
+        command: "#spawnitem Hazmat_Suit_Modern 1",
+    },
+    {
+        name: "Hazmat Suit",
+        amount: 1,
+        rate: "epic",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a6/Vintage_Hazmat_Suit.png",
+        command: "#spawnitem Hazmat_Suit_Vintage 1",
+    },
+    {
+        name: "Zombie Suit",
+        amount: 1,
+        rate: "legendary",
+        img: "https://cdn.discordapp.com/attachments/895695086761951233/1049231999413534770/zombiesuit.png",
+        command: "#spawnitem BP_Zombie_Impersonator_Suit 1",
+    },
+    {
+        name: "SVD",
+        amount: 1,
+        rate: "rare",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/33/SVD.png/revision/latest?cb=20220808023514",
+        command: "#spawnitem Christmas_Present_SVD",
+    },
+    {
+        name: "AK15",
+        amount: 1,
+        rate: "epic",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/94/AK15.png/revision/latest?cb=20200404202544",
+        command: "#spawnitem Christmas_Present_AK15",
     },
 ];
 
