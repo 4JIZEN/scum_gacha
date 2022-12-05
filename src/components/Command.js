@@ -9,9 +9,20 @@ function Command({items, steamId}) {
         navigator.clipboard.writeText(e.target.parentNode.firstChild.innerText);
     }
 
+    function toggleCopyBtn() {
+        const el = document.querySelectorAll('.copy-id');
+    
+        el.forEach((e) => {
+            if (e.style.visibility  == 'hidden') {
+                e.style.visibility = "visible";
+            } else {
+                e.style.visibility  = "hidden";
+            }
+        })
+    }
+
     let elCommand = [];
 
-   
     items.forEach((element, mkey) => {
         let newCmd = [];
         const cmdsplit = element.command.split(/\r?\n/);
@@ -26,7 +37,7 @@ function Command({items, steamId}) {
                         ? <div className='command-text'>{item} {location}</div>
                         : <div className='command-text'>{item + ' ' + element.amount + location}</div>
                     }
-                    <span className='span-btn' onClick={(e)=> { onClickCopy(e) }}>copy</span>
+                    <span className='copy-id span-btn' onClick={(e)=> { onClickCopy(e) }}>copy</span>
                 </div>
             )
         })
@@ -43,6 +54,7 @@ function Command({items, steamId}) {
             <div className='Command-Body'>
                 <div className='Command-Header'>
                     <span className='span-title'>Command</span>
+                    <span className='span-btn' onClick={()=> toggleCopyBtn()}>Toggle Copy Button</span>
                     <span className='span-btn red' onClick={()=> onCloseCmd()}>Close</span>
                 </div>
 
