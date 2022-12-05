@@ -253,14 +253,14 @@ const items = [
         name: "SVD",
         amount: 1,
         rate: "rare",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/33/SVD.png/revision/latest?cb=20220808023514",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/3/33/SVD.png",
         command: "#spawnitem Christmas_Present_SVD",
     },
     {
         name: "AK15",
         amount: 1,
         rate: "epic",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/94/AK15.png/revision/latest?cb=20200404202544",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/94/AK15.png",
         command: "#spawnitem Christmas_Present_AK15",
     },
 ];
