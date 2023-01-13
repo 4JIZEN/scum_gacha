@@ -63,7 +63,7 @@ const items = [
         amount: 1,
         rate: "common",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/d5/MP5.png",
-        command: "#spawnitem Christmas_Present_MP5",
+        command: "#spawnitem Christmas_Present_MP5_01",
     },
     {
         name: "MK18",
