@@ -11,48 +11,49 @@ const weightRate = {
     // epic: 10,
     // legendary: 5
 
-    common: 48,
+    common: 47,
     rare: 25,
     epic: 17,
-    legendary: 10
-}
+    legendary: 10,
+    special: 1,
+};
 
-function getRandItems (items) {
-    let choice = Math.floor(Math.random() * 101)
-    let result
+function getRandItems(items) {
+    let choice = Math.floor(Math.random() * 101);
+    let result;
 
-    choice = Math.floor(Math.random() * 101)
+    choice = Math.floor(Math.random() * 101);
 
     for (const x in weightRate) {
-        choice -= weightRate[x]
+        choice -= weightRate[x];
         if (choice <= 0) {
-            result = x
-            break
+            result = x;
+            break;
         }
     }
-    
+
     let item = getItemsInRate(result, items);
-    return item
+    return item;
 }
 
-function getItemsInRate (rate, items) {
-    let ratesup = rate
-    let itemRate = items.filter(item => item.rate === rate)
+function getItemsInRate(rate, items) {
+    let ratesup = rate;
+    let itemRate = items.filter((item) => item.rate === rate);
     while (itemRate.length === 0) {
-        ratesup = getLowerRate(ratesup)
-        itemRate = items.filter(item => item.rate === ratesup)
+        ratesup = getLowerRate(ratesup);
+        itemRate = items.filter((item) => item.rate === ratesup);
     }
-    return itemRate[Math.floor(Math.random() * itemRate.length)]
+    return itemRate[Math.floor(Math.random() * itemRate.length)];
 }
 
-function getLowerRate (currentRate) {
-    const wr = Object.entries(weightRate)
+function getLowerRate(currentRate) {
+    const wr = Object.entries(weightRate);
     for (const i in wr) {
         if (wr[i][0] === currentRate) {
-            return wr[i-1][0]
+            return wr[i - 1][0];
         }
     }
-    return currentRate
+    return currentRate;
 }
 
-export default getRandItems
+export default getRandItems;

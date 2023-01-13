@@ -19,7 +19,7 @@ const items = [
         rate: "common",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/c/ce/AWM.png",
         command:
-            "#spawnitem Cal_338_Ammobox 2 \n#spawnitem BP_Weapon_AWM 1\n#spawnitem BP_Magazine_AWM 2 AmmoCount 100\n#spawnitem BP_WeaponSuppressor_338_Black 1\n#spawnitem BP_WeaponScope_M82A1_Black 1",
+            "#spawnitem BP_Weapon_AWM 1\n#spawnitem BP_Magazine_AWM 2\n#spawnitem BP_WeaponSuppressor_338_Black 1\n#spawnitem BP_WeaponScope_M82A1_Black 1",
     },
     {
         name: "AWP",
@@ -27,7 +27,7 @@ const items = [
         rate: "common",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/78/AWP.png",
         command:
-            "#spawnitem BP_WeaponSuppressor_308_Black 1\n#spawnitem Cal_308_Ammobox 2\n#spawnitem BP_Weapon_AWP 1\n#spawnitem BP_Magazine_AWP 2 AmmoCount 100\n#spawnitem WeaponScope_Dragunov 1",
+            "#spawnitem BP_WeaponSuppressor_308_Black 1\n#spawnitem BP_Weapon_AWP 1\n#spawnitem BP_Magazine_AWP 2\n#spawnitem WeaponScope_Dragunov 1",
     },
     {
         name: "VHS2",
@@ -35,14 +35,14 @@ const items = [
         rate: "rare",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/92/VHS2.png",
         command:
-            "#spawnitem Cal_5_56x45mm_Ammobox 3\n#spawnitem BP_WeaponSuppressor_MK18 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1\n#spawnitem BP_Weapon_VHS2_Rail 1\n#spawnitem BP_Magazine_VHS2 3 AmmoCount 100",
+            "#spawnitem BP_WeaponSuppressor_MK18 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1\n#spawnitem BP_Weapon_VHS2_Rail 1\n#spawnitem BP_Magazine_VHS2 3",
     },
     {
         name: "VHS BG",
         amount: 1,
         rate: "epic",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/60/VHS_BG.png",
-        command: "#spawnitem BP_Weapon_VHS_BG 1\n#spawnitem BP_Cal_40x46",
+        command: "#spawnitem BP_Weapon_VHS_BG 1\n#spawnitem BP_Cal_40x46 5",
     },
     {
         name: "UMP 45",
@@ -97,9 +97,9 @@ const items = [
         name: "AK-47",
         amount: 1,
         rate: "rare",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/e/e7/AK47.png",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/f/f8/AK-47.png",
         command:
-            "#SpawnItem BP_Weapon_AK47\n#spawnitem BP_M70_Bayonet 1\n#spawnitem BP_Magazine_RPK 1 AmmoCount 100\n#spawnitem BP_ScopeRail_AK47 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1",
+            "#SpawnItem BP_Weapon_AK47 1\n#spawnitem BP_M70_Bayonet 1\n#spawnitem BP_Magazine_RPK 1\n#spawnitem BP_ScopeRail_AK47 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1",
     },
     {
         name: "AKM",
@@ -107,7 +107,7 @@ const items = [
         rate: "rare",
         img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/6/6c/AKM.png",
         command:
-            "#SpawnItem BPC_Weapon_AKM\n#spawnitem BP_M70_Bayonet 1\n#spawnitem BP_Magazine_RPK 1 AmmoCount 100\n#spawnitem BP_ScopeRail_AK47 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1",
+            "#SpawnItem BPC_Weapon_AKM 1\n#spawnitem BP_M70_Bayonet 1\n#spawnitem BP_Magazine_RPK 1\n#spawnitem BP_ScopeRail_AK47 1\n#spawnitem BP_WeaponSights_RedDot_CA401B 1",
     },
     {
         name: "Grenade",
@@ -229,27 +229,6 @@ const items = [
         command: "#SpawnItem Cal_9mm_Ammobox",
     },
     {
-        name: "Hazmat Suit",
-        amount: 1,
-        rate: "legendary",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/d/de/Modern_Hazmat_Suit.png",
-        command: "#spawnitem Hazmat_Suit_Modern 1",
-    },
-    {
-        name: "Hazmat Suit",
-        amount: 1,
-        rate: "epic",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/a6/Vintage_Hazmat_Suit.png",
-        command: "#spawnitem Hazmat_Suit_Vintage 1",
-    },
-    {
-        name: "Zombie Suit",
-        amount: 1,
-        rate: "legendary",
-        img: "https://cdn.discordapp.com/attachments/895695086761951233/1049231999413534770/zombiesuit.png",
-        command: "#spawnitem BP_Zombie_Impersonator_Suit 1",
-    },
-    {
         name: "SVD",
         amount: 1,
         rate: "rare",
@@ -260,8 +239,22 @@ const items = [
         name: "AK15",
         amount: 1,
         rate: "epic",
-        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/9/94/AK15.png",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/a/ac/AK-15.png",
         command: "#spawnitem Christmas_Present_AK15",
+    },
+    {
+        name: "C4 Circuit Board",
+        amount: 1,
+        rate: "special",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/0/0b/C4_Ingredient_1.png",
+        command: "#spawnitem BP_C4_CircuitBoard",
+    },
+    {
+        name: "C4 Pack",
+        amount: 1,
+        rate: "special",
+        img: "https://static.wikia.nocookie.net/scum_gamepedia_en/images/7/7d/C4_Ingredient_2.png",
+        command: "#spawnitem BP_C4_Pack",
     },
 ];
 

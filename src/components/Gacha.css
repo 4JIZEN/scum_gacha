@@ -141,3 +141,7 @@ button:hover, .span-btn:hover  {
 .legendary {
     background-color: rgba(252, 206, 0, 0.3);
 }
+
+.special {
+    background-color: rgba(252, 0, 55, 0.3);
+}
